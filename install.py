@@ -50,7 +50,7 @@ def local_server():
 	copy(source=pk, destination='/etc/ssl/private', basename='private.key', mode='0600')
 	copy(source=crt, destination='/etc/ssl/certs', basename='certificate.crt', mode='0600')
 
-	template('/api.conf.j2', get_ssl_context(os.environ), '/etc/nginx/conf.d/default.conf')
+	template('/default.conf.j2', get_ssl_context(os.environ), '/etc/nginx/conf.d/default.conf')
 
 def lets_encrypt_server():
 	context = {
