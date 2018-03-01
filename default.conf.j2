@@ -27,7 +27,7 @@ server {
 
 {% if lets_encrypt %}
         ssl_certificate /etc/letsencrypt/live/{{ domain }}/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/{{ domain }}/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/{{ domain }}/privkey.pem;
 {% else %}
         ssl_certificate /etc/ssl/certs/certificate.crt;
         ssl_certificate_key /etc/ssl/private/private.key;
