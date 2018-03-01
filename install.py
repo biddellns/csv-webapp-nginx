@@ -58,7 +58,7 @@ def lets_encrypt_server():
 		'lets_encrypt': True
 	}
 
-	jinja_template = Template(open('/api.conf.j2').read())
+	jinja_template = Template(open('/default.conf.j2').read())
 	with open('/etc/nginx/conf.d/default.conf', 'w') as f:
 		f.write(jinja_template.render(context))
 
