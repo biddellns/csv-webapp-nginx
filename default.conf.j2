@@ -26,7 +26,7 @@ server {
         listen [::]:443 ssl http2 default_server;
 
 {% if lets_encrypt %}
-        ssl_certificate /etc/letsencrypt/live{{ domain }}/fullchain.pem;
+        ssl_certificate /etc/letsencrypt/live/{{ domain }}/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/{{ domain }}/fullchain.pem;
 {% else %}
         ssl_certificate /etc/ssl/certs/certificate.crt;
